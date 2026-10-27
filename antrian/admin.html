@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Antrean - RS Aqilah Hidayah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-page">
+  <header class="admin-header">
+    <div class="hospital-brand">
+      <img src="assets/logo-rs.png"
+     alt="Logo Rumah Sakit"
+     class="hospital-logo">
+      <div>
+        <h1>ADMIN ANTRIAN</h1>
+        <p>RS Aqilah Hidayah • PANEL PENGENDALI</p>
+      </div>
+    </div>
+    <a class="button button-light" href="index.html" target="_blank">Buka Monitor ↗</a>
+  </header>
+
+  <main class="admin-container">
+    <section class="welcome-row">
+      <div>
+        <h2>Pengelolaan Antrean</h2>
+        <p>Pilih layanan, isi data pasien, lalu tekan tombol panggil.</p>
+      </div>
+      <div class="admin-clock" id="adminClock">--:--</div>
+    </section>
+
+    <section class="admin-layout">
+      <article class="panel admin-form-panel">
+        <div class="panel-title">
+          <span class="title-icon">＋</span>
+          <div><h3>Panggil Antrean</h3><p>Masukkan nomor dan nama pasien</p></div>
+        </div>
+
+        <label for="serviceSelect">Jenis layanan</label>
+        <select id="serviceSelect">
+          <option value="cs">Customer Service</option>
+          <option value="payment">Pembayaran</option>
+          <option value="pharmacy">Pengambilan Obat</option>
+          <option value="doctor">Layanan Dokter</option>
+        </select>
+
+        <label for="patientName">Nama pasien (opsional)</label>
+        <input id="patientName" type="text" placeholder="Contoh: Budi Santoso" maxlength="70">
+
+        <label for="queueNumber">Nomor antrean</label>
+        <div class="number-input-row">
+          <input id="queueNumber" type="text" placeholder="A-001" maxlength="12">
+          <button class="button button-outline" id="nextNumberBtn" type="button">Nomor berikutnya</button>
+        </div>
+
+        <label for="counterName">Nama / nomor loket</label>
+        <input id="counterName" type="text" placeholder="Contoh: Loket 1" value="Loket 1">
+
+        <div class="form-actions">
+          <button class="button button-primary" id="callBtn" type="button">🔊 Panggil Antrean</button>
+          <button class="button button-outline" id="repeatBtn" type="button">↻ Ulangi Panggilan</button>
+        </div>
+        <p class="hint">Catatan: suara panggilan menggunakan fitur text-to-speech pada browser. Pastikan volume perangkat aktif.</p>
+      </article>
+
+      <article class="panel current-panel">
+        <div class="panel-title">
+          <span class="title-icon">▣</span>
+          <div><h3>Status Antrean</h3><p>Ringkasan nomor per layanan</p></div>
+        </div>
+        <div id="adminServiceStatus" class="admin-status-list"></div>
+        <button class="button button-danger button-full" id="resetBtn" type="button">Reset Semua Antrean</button>
+        <p class="hint">Reset akan menghapus data antrean pada browser ini. Gunakan hanya saat diperlukan.</p>
+      </article>
+    </section>
+
+    <section class="panel history-panel">
+      <div class="panel-title">
+        <span class="title-icon">☷</span>
+        <div><h3>Riwayat Pemanggilan</h3><p>Sepuluh pemanggilan terakhir</p></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Waktu</th><th>Nomor</th><th>Nama Pasien</th><th>Layanan</th><th>Loket</th></tr></thead>
+          <tbody id="historyBody"><tr><td colspan="5" class="empty-cell">Belum ada pemanggilan.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel settings-panel">
+      <div class="panel-title">
+        <span class="title-icon">⚙</span>
+        <div><h3>Identitas Monitor</h3><p>Pengaturan tampilan monitor</p></div>
+      </div>
+      <div class="settings-grid">
+        <div><label for="settingHospital">Nama rumah sakit</label><input id="settingHospital" value="RS Aqilah Hidayah "></div>
+        <div><label for="settingTagline">Slogan</label><input id="settingTagline" value="PELAYANAN CEPAT • RAMAH • PROFESIONAL"></div>
+        <div><label for="settingLogo">Inisial logo</label><input id="settingLogo" value="RS" maxlength="4"></div>
+        <div><label for="settingCaption">Teks bawah video</label><input id="settingCaption" value="Sehat bersama, pelayanan sepenuh hati."></div>
+      </div>
+      <button class="button button-primary" id="saveSettingsBtn" type="button">Simpan Identitas</button>
+    </section>
+    <div class="admin-note">Versi demo lokal: data tersimpan di browser. Agar admin dan monitor di perangkat berbeda tersinkron, aplikasi perlu server/database bersama.</div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

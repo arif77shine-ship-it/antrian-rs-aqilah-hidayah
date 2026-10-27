@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitor Antrean - RS Sehat Sentosa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="monitor-page">
+  <header class="hospital-header">
+    <div class="hospital-brand">
+      <img src="assets/logo-rs.png"
+     alt="Logo Rumah Sakit"
+     class="hospital-logo">
+      <div>
+        <h1 id="hospitalName">RS SEHAT SENTOSA</h1>
+        <p id="hospitalTagline">PELAYANAN CEPAT • RAMAH • PROFESIONAL</p>
+      </div>
+    </div>
+    <div class="header-info">
+      <div id="clock">00:00:00</div>
+      <div id="dateText">Memuat tanggal...</div>
+    </div>
+  </header>
+
+  <main class="monitor-main">
+    <section class="featured-grid">
+      <article class="called-card panel">
+        <div class="section-label"><span class="pulse-dot"></span> NOMOR ANTREAN DIPANGGIL</div>
+        <div class="called-number" id="mainNumber">---</div>
+        <div class="called-name" id="mainPatient">Belum ada panggilan</div>
+        <div class="called-service" id="mainService">Silakan menunggu panggilan</div>
+        <div class="counter-pill" id="mainCounter">LOKET —</div>
+      </article>
+
+      <article class="promo-card panel">
+        <div class="promo-heading">
+          <div>
+            <h2>Informasi & Promosi</h2>
+            <p>Informasi layanan rumah sakit</p>
+          </div>
+          <span class="live-badge">INFO RS</span>
+        </div>
+        <video id="promoVideo" controls autoplay muted loop playsinline>
+          <source src="assets/video-promosi.mp4" type="video/mp4">
+          Browser Anda tidak mendukung pemutar video.
+        </video>
+        <div class="video-caption" id="videoCaption">Sehat bersama, pelayanan sepenuh hati.</div>
+      </article>
+    </section>
+
+    <section class="service-section">
+      <div class="service-section-heading">
+        <div>
+          <h2>Informasi Antrean Per Layanan</h2>
+          <p>Nomor yang sedang dipanggil di setiap bagian</p>
+        </div>
+        <div class="status-indicator"><span></span> SISTEM AKTIF</div>
+      </div>
+      <div class="service-grid" id="serviceGrid"></div>
+    </section>
+  </main>
+
+  <footer class="monitor-footer">
+    <span>Mohon perhatikan layar saat nomor Anda dipanggil.</span>
+    <span id="footerHospital">RS SEHAT SENTOSA</span>
+  </footer>
+
+  <audio id="callChime" preload="auto">
+    <source src="assets/chime.mp3" type="audio/mpeg">
+  </audio>
+  <script src="app.js"></script>
+</body>
+</html>

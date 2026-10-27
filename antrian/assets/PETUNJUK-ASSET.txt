@@ -1,0 +1,5 @@
+ASSET OPSIONAL
+1. Simpan video promosi rumah sakit dengan nama: video-promosi.mp4
+   Letakkan di folder assets ini. Rasio video yang disarankan 16:9.
+2. Suara panggilan menggunakan text-to-speech browser, sehingga chime.mp3 tidak wajib.
+3. Ganti tulisan/logo inisial RS melalui halaman admin. Untuk logo gambar, ubah elemen .logo-mark pada index.html dan admin.html.
